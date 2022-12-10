@@ -14,7 +14,7 @@ type TasksStateType = {
 }
 
 type DataType = {
-    data: TaskType[]
+    data: Array<TaskType>
     filter: FilterValuesType
 }
 
@@ -78,7 +78,7 @@ function App() {
                 let tasksForTodolist = tasks[el.id].data;
 
                 if (tasks[el.id].filter === "active") {
-                    tasksForTodolist = tasks[el.id].data.filter(t => !t.isDone );
+                    tasksForTodolist = tasksForTodolist.filter(t => !t.isDone );
                 }
                 if (tasks[el.id].filter === "completed") {
                     tasksForTodolist = tasks[el.id].data.filter(t => t.isDone );
